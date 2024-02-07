@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{Fragments::head(DetailsEvent)}"></head>
+<body>
+    <header th:replace="~{Fragments::header}"></header>
+
+   <div class="text-center">
+        <h1><span th:text="${event.name}"></span></h1>
+        <h5>Welcome to Event Details.</h5>
+   </div>
+   
+    <hr>
+
+    <div class="container">
+        <h3><span th:text="${event.name}"></span></h3>
+        <p><span th:text="${event.place}"></span><p>
+        <p><span th:text="${event.date}"></span><p>
+        <p><span th:text="${event.time}"></span><p>
+    </div>
+
+    <div class="container mt-4">
+        <div class="mb-3">
+          <h4 class="font-weight-bold">Add Guest:</h4>
+        </div>
+        <div class="mb-3">
+          <a th:href="@{'/'+${event.id}+ '/guest'}" class="btn btn-primary">+1 Add</a>
+        </div>
+      </div>
+
+      <div class=" container mb-3">
+        <h4 class="font-weight-bold">Guests List:</h4>
+      </div>
+    <div class="container mb-3">
+        <a th:href="@{'/'+ ${event.id} + '/guestList'}" class="btn btn-primary">GuestList</a>
+
+    </div>
+</body>
+</html>

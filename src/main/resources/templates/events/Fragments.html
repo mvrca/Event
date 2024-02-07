@@ -1,0 +1,38 @@
+
+<div class="container" th:fragment="form(dto)">
+    <form th:object="${dto}" class="container mt-4" method="post">
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label for="name" class="form-label">Event Name:</label>
+                <input type="text" class="form-control" th:errorclass="is-invalid" th:field="*{name}"  placeholder="Event name...">
+                <div class="invalid-feedback" th:errors="*{name}"></div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label for="place" class="form-label">Place:</label>
+                <input type="text" class="form-control" th:errorclass="is-invalid" th:field="*{place}"  placeholder="Place name...">
+                <div class="invalid-feedback" th:errors="*{place}"></div>
+            </div>
+        </div>
+    
+        <div class="col-md-3">
+            <div class="mb-3">
+                <label for="date" class="form-label">Date:</label>
+                <input type="date" class="form-control" th:errorclass="is-invalid" th:field="*{date}">
+                <div class="invalid-feedback" th:errors="*{date}"></div>
+    
+            </div>
+        </div>
+        
+        <div class="col-md-3">
+            <div class="mb-3">
+                <label for="time" class="form-label">Time:</label>
+                <input type="text" class="form-control" th:errorclass="is-invalid" th:field="*{time}" placeholder="8:00...">
+                <div class="invalid-feedback" th:errors="*{time}"></div>
+            </div>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+</div>

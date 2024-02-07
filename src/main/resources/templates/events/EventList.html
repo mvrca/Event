@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{Fragments::head(EventList)}"></head>
+<body>
+    <header th:replace="~{Fragments::header}"></header>
+    <table class="container table table-hover mt-5">
+        <thead>
+            <tr>
+               <td>ID:</td> 
+               <td>EVENT NAME:</td> 
+               <td>UPDATE:</td>
+               <td>DELETE:</td>
+            </tr>
+            
+        </thead>
+
+        <tbody>
+            <tr th:each="ev: ${events}">
+                <td><span th:text="'#'+ ${ev.id}"></span></td>
+                <td><a th:href="@{'/'+ ${ev.id} + '/details'}"><span th:text="${ev.name}"></span></a></td>
+                <td><a class="btn btn-info" th:href="@{'/'+ ${ev.id}}">update</a></td>
+                <td><a class="btn btn-info" th:href="@{'/'+ ${ev.id}+ '/delete'}"><i class="bi bi-trash"></i> delete</a></td>
+
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{Fragments::head(GuestList)}"></head>
+<body>
+    <header th:replace="~{Fragments::header}"></header>
+    <div class="container text-center">
+        <h1>Guest List</h1>
+        <h5>(List with all guests in this Event.)</h5>
+    </div>
+        <hr>
+        <table class="container table table-hover ">
+        <thead>
+            <tr>
+               <td>GUEST NAME:</td> 
+               <td>PHONE NUMBER:</td> 
+               <td>DELETE:</td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr th:each="g: ${guest}">
+                <td><span th:text="${g.name}"></span></td>
+                <td><span th:text="${g.phone}"></span></td>
+                <td><a th:href="@{'/' + ${id} + '/del'}">del</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="container mt-4">
+        <h4 class="font-weight-bold">Back to Guest Form:</h4>
+      </div>
+    <div class="container mb-3">
+        <a th:href="@{'/' + ${id} + '/guest'}" class="btn btn-primary">+Add</a>
+    </div>
+    <div class="container mt-4">
+        <h4 class="font-weight-bold">Delete All Guests:</h4>
+      </div>
+    <div class="container mb-3">
+        <a th:href="@{'/' + ${id} + '/delAll'}" class="btn btn-primary">Del-</a>
+    </div>
+    
+</body>
+</html>

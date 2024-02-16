@@ -3,6 +3,13 @@
 <head th:replace="~{Fragments::head(EventList)}"></head>
 <body>
     <header th:replace="~{Fragments::header}"></header>
+
+    <div class="container text-center mt-4">
+        <h1>Event List</h1>
+        <h5>(All Events, here!)</h5>
+    </div>
+    
+
     <table class="container table table-hover mt-5">
         <thead>
             <tr>
@@ -20,7 +27,6 @@
                 <td><a th:href="@{'/'+ ${ev.id} + '/details'}"><span th:text="${ev.name}"></span></a></td>
                 <td><a class="btn btn-info" th:href="@{'/'+ ${ev.id}}">update</a></td>
                 <td><a class="btn btn-info" th:href="@{'/'+ ${ev.id}+ '/delete'}"><i class="bi bi-trash"></i> delete</a></td>
-
             </tr>
         </tbody>
     </table>

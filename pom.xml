@@ -51,6 +51,14 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
+
+		<dependency>
+        	<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-agroal</artifactId>
+				<version>6.2.13.Final</version>
+				<type>pom</type>
+        </dependency>
+		
 	</dependencies>
 
 	<build>
@@ -62,11 +70,6 @@
 		</plugins>
 	</build>
 
-	<dependency>
-        	<groupId>org.hibernate</groupId>
-				<artifactId>hibernate-agroal</artifactId>
-				<version>6.2.13.Final</version>
-				<type>pom</type>
-        </dependency>
+		
 
 </project>

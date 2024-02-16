@@ -21,7 +21,7 @@
             <tr th:each="g: ${guest}">
                 <td><span th:text="${g.name}"></span></td>
                 <td><span th:text="${g.phone}"></span></td>
-                <td><a th:href="@{'/' + ${id} + '/del'}">del</a></td>
+                <td><a th:href="@{'/' + ${g.phone} + '/del'}">del</a></td>
             </tr>
         </tbody>
     </table>

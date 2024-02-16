@@ -38,9 +38,8 @@ public class GuestController {
         return gService.deleteAllGuests(id);
     }
 
-    @GetMapping("/{id}/del")
-        public String del(@PathVariable Long id, String phone){
-            return gService.del( phone);
+    @GetMapping("/{phone}/del")
+    public String del(@PathVariable String phone){
+        return gService.del(phone);
     }
-    
 }

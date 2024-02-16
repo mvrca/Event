@@ -70,24 +70,16 @@ public class GuestService {
         }
     }
 
-
-
-    public String del(String phone){
+    public String del(@PathVariable String phone){
         Guest guest = gRepository.findByPhone(phone);
-    
-        if (guest != null) {
-            gRepository.delete(guest);
-    
-            Event event = guest.getEvent();
-            Long code = event.getId();
-            String id = "" + code;
-            return "redirect:/" + id;
-        } else {
-            // Handle the case when the guest is not found
-            return "redirect:/"; // You can redirect to a custom error page
-        }
-    }
-    
+        gRepository.deleteById(phone);;
 
-    
+        Event ev = guest.getEvent();
+        Long code = ev.getId();
+        String id = "" + code;
+
+        return "redirect:/" + id + "/guestList";
+
+        
+    }
 }

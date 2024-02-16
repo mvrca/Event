@@ -2,14 +2,12 @@
 <html lang="en">
 <head th:replace="~{Fragments::head(EventForm)}"></head>
 <body>
-    <div class="container text-center">
+    <div class="container text-center mt-4">
         <header th:replace="~{Fragments::header}"></header>
         
-        <h1>Update Now!</h1>
+        <h1 class="mt-4">Update Now!</h1>
         <h5>(Do you need to update the Event?)</h5>
     </div>
-    
-    <hr>
 
     <form th:object="${dtoEvent}" class="container mt-4"  method="post">
         <div class="col-md-6">

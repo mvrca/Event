@@ -11,9 +11,11 @@ public class Guest {
     @ManyToOne
     private Event event;
 
-    private String name;
     @Id
     private String phone;
+    
+    private String name;
+    
     
     
 

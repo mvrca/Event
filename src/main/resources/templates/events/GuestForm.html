@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head th:replace="~{Fragments :: head(GuestForm)}">
-<header th:replace="~{Fragments :: header}"></header>
+
 </head>
 <body>
-    
-    <div class="container text-center">
+    <header th:replace="~{Fragments :: header}"></header>
+
+    <div class="container text-center mt-4">
         <h1>Guests Form</h1>
     </div>
-    <hr>
 
-    <form th:object="${dtoGuest}" class="container" method="post">
-        <div class="col-md-6">
+    <form th:object="${dtoGuest}" class="container mt-4" method="post">
+        <div class="col-md-4 mb-3">
             <label for="name" class="form-label">Name:</label>
             <input type="text" class="form-control" th:errorclass="is-invalid" th:field="*{name}" placeholder="Event name...">
             <div class="invalid-feedback" th:errors="*{name}"></div>
         </div>
-        <div class="col-md-6 mb-3">
+        <div class="col-md-4 mb-3">
             <label for="phone" class="form-label">Phone:</label>
-            <input type="text" class="form-control" th:errorclass="is-invalid" th:field="*{phone}" placeholder="Phone number...">
+            <input type="text" class="form-control" th:errorclass="is-invalid" th:field="*{phone}" placeholder="(83)XXXXXXXXX...">
             <div class="invalid-feedback" th:errors="*{phone}"></div>
         </div>
         <button type="submit" class=" mb-3 btn btn-primary">Save</button>
@@ -27,7 +27,7 @@
         <h4>Go to Guest List:</h4>
     </div>
     <h4 class="container mb-3">
-        <a th:href="@{'/' + ${event?.id} + '/guestList'}" class="btn btn-primary">GuestList</a>
+        <a th:href="@{'/' + ${event.id} + '/guestList'}" class="btn btn-primary">Guests</a>
     </h4>
 </body>
 </html>

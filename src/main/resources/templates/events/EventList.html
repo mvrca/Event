@@ -8,25 +8,27 @@
         <h1>Event List</h1>
         <h5>(All Events, here!)</h5>
     </div>
-    
+
 
     <table class="container table table-hover mt-5">
         <thead>
             <tr>
-               <td>ID:</td> 
                <td>EVENT NAME:</td> 
                <td>UPDATE:</td>
                <td>DELETE:</td>
+               <td>ID:</td> 
             </tr>
             
         </thead>
 
         <tbody>
+            
+
             <tr th:each="ev: ${events}">
+                <td><a class="btn btn-info" th:href="@{'/'+ ${ev.id} + '/details'}"><span th:text="${ev.name}"></span></a></td>
+                <td><a class="btn btn-info edit" th:href="@{'/'+ ${ev.id}}"><i class="bi bi-pen"></i> edit</a></td>
+                <td><a class="btn btn-info delete" th:href="@{'/'+ ${ev.id}+ '/delete'}"><i class="bi bi-trash2-fill"></i>delete</a></td>
                 <td><span th:text="'#'+ ${ev.id}"></span></td>
-                <td><a th:href="@{'/'+ ${ev.id} + '/details'}"><span th:text="${ev.name}"></span></a></td>
-                <td><a class="btn btn-info" th:href="@{'/'+ ${ev.id}}">update</a></td>
-                <td><a class="btn btn-info" th:href="@{'/'+ ${ev.id}+ '/delete'}"><i class="bi bi-trash"></i> delete</a></td>
             </tr>
         </tbody>
     </table>

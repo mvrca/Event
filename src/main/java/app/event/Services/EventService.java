@@ -4,6 +4,10 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -38,7 +42,11 @@ public class EventService {
     }
 
     public ModelAndView showList(){
-        List<Event> ev = evRepository.findAll();
+        Sort sort = Sort.by(Sort.Direction.ASC, "date");
+        Pageable pageable = PageRequest.of(0, 10, sort);
+        
+        Page<Event> ev = evRepository.findAll(pageable);
+
         ModelAndView mv = new ModelAndView("events/EventList");
         mv.addObject("events", ev);
         return mv;

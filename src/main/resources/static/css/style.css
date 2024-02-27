@@ -1,7 +1,30 @@
 body{
     height: 100vh;
-    background: linear-gradient(120deg,	#000000,	#000052);
+    background: linear-gradient(120deg,	#000000,	#020286);
     justify-content: center;
     font-family: 'Bebas Neue', sans-serif;
+    color: white;
+}
+
+.btn-info{
+    background-color:#00032c;
+    color: white;
+}
+
+.edit{
+    color: white;
+}
+
+.delete{
+    color: white;
+}
+
+.save{
+    background-color: #000000;
+    color: white;
+}
+
+.update{
+    background-color: #000000;
     color: white;
 }

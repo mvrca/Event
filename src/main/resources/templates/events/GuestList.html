@@ -2,13 +2,15 @@
 <html lang="en">
 <head th:replace="~{Fragments::head(GuestList)}"></head>
 <body>
+
     <header th:replace="~{Fragments::header}"></header>
-    <div class="container text-center">
+
+    <div class="container text-center mt-4">
         <h1>Guest List</h1>
         <h5>(List with all guests in this Event.)</h5>
     </div>
-        <hr>
-        <table class="container table table-hover ">
+
+        <table class="container table table-hover mt-4" style="border-radius: 10px;">
         <thead>
             <tr>
                <td>GUEST NAME:</td> 
@@ -16,10 +18,8 @@
                <td>DELETE:</td>
             </tr>
         </thead>
-<style>
-    
-</style>
-        <tbody>
+
+        <tbody class="container">
             <tr th:each="g: ${guest}">
                 <td><span th:text="${g.name}"></span></td>
                 <td><span th:text="${g.phone}"></span></td>

@@ -11,20 +11,14 @@ body{
     color: white;
 }
 
-.edit{
+.btn-primary{ 
+    background-color: black;
     color: white;
+    border-color: #020286
 }
 
-.delete{
+.btn-primary:hover {
+    background-color: #020286; /* Define a cor de fundo do botão quando o cursor do mouse está sobre ele */
     color: white;
-}
-
-.save{
-    background-color: #000000;
-    color: white;
-}
-
-.update{
-    background-color: #000000;
-    color: white;
+    border-color: #ffffff; /* Define a cor da borda do botão quando o cursor do mouse está sobre ele */
 }

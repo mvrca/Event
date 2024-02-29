@@ -36,8 +36,8 @@ public class EventService {
             System.out.println("*********Form Error********");
             return "events/EventForm";
         }
-        Event events = dtoEvent.toEvent();
-        evRepository.save(events);
+        Event event = dtoEvent.toEvent();
+        evRepository.save(event);
         return "redirect:/list";
     }
 

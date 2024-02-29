@@ -10,28 +10,28 @@
     <h5>Welcome to Event Details.</h5>
 </div>
 
-<div class="container mt-4">
+<div class="container mt-4 border border-1 rounded-lg p-3" style="border-radius: 20px;">
     <h3><span th:text="${event.name}"></span></h3>
-    <p><span th:text="${event.place}"></span></p>
-    <p><span th:text="${event.date}"></span></p>
-    <p><span th:text="${event.time}"></span></p> 
+    <p><span th:text="'Place:   ->   '+ ${event.place}"></span></p>
+    <p><span th:text="'Date:   ->   '+ ${event.date}"></span></p>
+    <p><span th:text="'Time:   ->   '+ ${event.time}"></span></p> 
 </div>
 
 <div class="container mt-4">
-    <div class="mb-3">
+    <div>
       <h4 class="font-weight-bold">Add Guest:</h4>
     </div>
 
-    <div class="mb-3 ">
-      <a th:href="@{'/'+${event.id}+ '/guest'}" class="btn btn-primary">+1 Add</a>
+    <div>
+      <a th:href="@{'/'+${event.id}+ '/guest'}" class="btn btn-primary details">+1</a>
     </div>
 </div>
 
-<div class=" container mb-3 mt-4">
-    <h4 class="font-weight-bold">Guests List:</h4>
+<div class=" container mt-4">
+    <h4 class="font-weight-bold">List:</h4>
   </div>
 <div class="container mb-3">
-    <a th:href="@{'/'+ ${event.id} + '/guestList'}" class="btn btn-primary">Guests</a>
+    <a th:href="@{'/'+ ${event.id} + '/guestList'}" class="btn btn-primary details">Guests</a>
 </div>
 
 </body>

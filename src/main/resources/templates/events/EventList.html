@@ -22,12 +22,10 @@
         </thead>
 
         <tbody>
-            
-
             <tr th:each="ev: ${events}">
-                <td><a class="btn btn-info" th:href="@{'/'+ ${ev.id} + '/details'}"><span th:text="${ev.name}"></span></a></td>
-                <td><a class="btn btn-info edit" th:href="@{'/'+ ${ev.id}}"><i class="bi bi-pen"></i> edit</a></td>
-                <td><a class="btn btn-info delete" th:href="@{'/'+ ${ev.id}+ '/delete'}"><i class="bi bi-trash2-fill"></i>delete</a></td>
+                <td><a class="btn btn-primary" th:href="@{'/'+ ${ev.id} + '/details'}"><span th:text="${ev.name}"></span></a></td>
+                <td><a class="btn btn-primary" th:href="@{'/'+ ${ev.id}}"><i class="bi bi-pen"></i> edit</a></td>
+                <td><a class="btn btn-primary" th:href="@{'/'+ ${ev.id}+ '/delete'}"><i class="bi bi-trash2-fill"></i>delete</a></td>
                 <td><span th:text="'#'+ ${ev.id}"></span></td>
             </tr>
         </tbody>

@@ -10,6 +10,7 @@
         <h5>(Add your event you want)</h5>
     </div>
     
+    
     <form th:object="${dtoEvent}" class="container mt-4" action="/form" method="post">
         <div class="col-md-6">
             <div class="mb-3">
@@ -18,6 +19,7 @@
                 <div class="invalid-feedback" th:errors="*{name}"></div>
             </div>
         </div>
+        
         <div class="col-md-6">
             <div class="mb-3">
                 <label for="place" class="form-label">Place:</label>

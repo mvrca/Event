@@ -7,18 +7,22 @@ body{
 }
 
 .btn-info{
-    background-color:#00032c;
+    background-color:#000000;
     color: white;
 }
 
 .btn-primary{ 
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     color: white;
     border-color: #020286
 }
 
 .btn-primary:hover {
-    background-color: #020286; /* Define a cor de fundo do botão quando o cursor do mouse está sobre ele */
+    background-color: #020286; 
     color: white;
-    border-color: #ffffff; /* Define a cor da borda do botão quando o cursor do mouse está sobre ele */
+    border-color: #ffffff; 
+}
+
+.nav-link{
+    color: white;
 }

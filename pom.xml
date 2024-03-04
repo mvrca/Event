@@ -58,7 +58,11 @@
 				<version>6.2.13.Final</version>
 				<type>pom</type>
         </dependency>
-		
+
+		<dependency>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-core</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>

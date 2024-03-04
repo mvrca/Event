@@ -23,7 +23,7 @@
             <tr th:each="g: ${guest}">
                 <td><span th:text="${g.name}"></span></td>
                 <td><span th:text="${g.phone}"></span></td>
-                <td><a th:href="@{'/' + ${g.phone} + '/del'}">del</a></td>
+                <td><a th:href="@{'/' + ${g.phone} + '/del'}" class="btn btn-primary"> <i class="bi bi-trash2-fill"></i></a></td>
             </tr>
         </tbody>
     </table>
@@ -37,7 +37,7 @@
         <h4 class="font-weight-bold">Delete All Guests:</h4>
       </div>
     <div class="container mb-3">
-        <a th:href="@{'/' + ${id} + '/delAll'}" class="btn btn-primary">Del-</a>
+        <a th:href="@{'/' + ${id} + '/delAll'}" class="btn btn-primary"><i class="bi bi-trash2-fill"></i>delete</a>
     </div>
     
 </body>

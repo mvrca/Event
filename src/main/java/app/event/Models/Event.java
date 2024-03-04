@@ -17,6 +17,7 @@ public class Event {
     private String place;
     private String date;
     private String time;
+    private String descricao;
 
     @OneToMany
     private List<Guest> guest;
@@ -64,5 +65,12 @@ public class Event {
     public void setGuest(List<Guest> guest) {
         this.guest = guest;
     }
+    public String getDescricao() {
+        return descricao;
+    }
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
     //#endregion
+   
 }

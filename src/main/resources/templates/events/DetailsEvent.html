@@ -10,11 +10,13 @@
     <h5>Welcome to Event Details.</h5>
 </div>
 
-<div class="container mt-4 border border-1 rounded-lg p-3" style="border-radius: 20px;">
+<div class="container mt-4 border border-1 rounded-lg p-3" style="border-radius: 30px;">
     <h3><span th:text="${event.name}"></span></h3>
     <p><span th:text="'Place:   ->   '+ ${event.place}"></span></p>
     <p><span th:text="'Date:   ->   '+ ${event.date}"></span></p>
     <p><span th:text="'Time:   ->   '+ ${event.time}"></span></p> 
+    <hr>
+    <p><span th:text="'Description:   ->   '+ ${event.descricao}"></span></p>
 </div>
 
 <div class="container mt-4">
@@ -23,7 +25,7 @@
     </div>
 
     <div>
-      <a th:href="@{'/'+${event.id}+ '/guest'}" class="btn btn-primary details">+1</a>
+      <a th:href="@{'/'+${event.id}+ '/guest'}" class="btn btn-primary details">+ADD</a>
     </div>
 </div>
 

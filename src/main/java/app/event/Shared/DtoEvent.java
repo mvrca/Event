@@ -15,17 +15,17 @@ public class DtoEvent {
     private String date;
     @NotBlank
     private String time;
-    @NotBlank
     private String descricao;
 
+
     public Event toEvent(){
-        Event event = new Event();
-        event.setName(name);
-        event.setPlace(place);
-        event.setDate(date);
-        event.setTime(time);
-        event.setDescricao(descricao);
-        return event;
+        Event ev = new Event();
+        ev.setName(this.name);
+        ev.setPlace(this.place);
+        ev.setDate(this.date);
+        ev.setTime(this.time);
+        ev.setDescricao(this.descricao);
+        return ev;
     }
     public Event toEvent(Event ev){
         ev.setName(this.name);
@@ -35,13 +35,13 @@ public class DtoEvent {
         ev.setDescricao(descricao);
         return ev;
     }
-
     public void fromEvent(Event ev){
         this.name = ev.getName();
         this.place = ev.getPlace();
         this.date = ev.getDate();
         this.time = ev.getTime();
         this.descricao = ev.getDescricao();
+        
     }
     
     //#region Getters&Setters

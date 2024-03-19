@@ -18,13 +18,10 @@ public class Event {
     private String date;
     private String time;
     private String descricao;
+    
 
     @OneToMany
     private List<Guest> guest;
-    
-    /*public Event toEv(){
-        Event ev= new Event();
-        ev.set*/
     
     //#region Getters&Setters
     
@@ -71,6 +68,8 @@ public class Event {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
+
+    
     //#endregion
    
 }

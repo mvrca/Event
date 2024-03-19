@@ -44,16 +44,16 @@
                 <div class="invalid-feedback" th:errors="*{time}"></div>
             </div>
         </div>
-
-        <div class="col-md-3">
-            <div class="mb-3">
-                <label for="descricao" class="form-label">Descrição:</label>
-                <input type="text" class="form-control" th:errorclass="is-invalid" th:field="*{descricao}" placeholder="Text...">
-                <div class="invalid-feedback" th:errors="*{descricao}"></div>
-            </div>
-        </div>
+        <div class="col-md-6 mb-3">
+            <div>
+                <label for="descricao" class="form-label">Description:</label>
+                <textarea class="form-control" th:errorclass="is-invalid" th:field="*{descricao}" placeholder="Leave a comment here"></textarea>
+          </div>
+        </div>  
         
         <button type="submit" class="btn btn-primary save">Save</button>
+        <br>
+        <br>
     </form>
 </body>
 </html>

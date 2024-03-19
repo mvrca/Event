@@ -61,7 +61,7 @@ public class EventService {
 
     public ModelAndView edit(@PathVariable Long id, DtoEvent dto, BindingResult result){
         if (result.hasErrors()) {
-            System.out.println("***********************************************EDIIIIITTTT ERROOORRR!!!**********************************************");
+            System.out.println("**********EDIIIIITTTT ERROOORRR!!!**********");
             return new ModelAndView("events/Edit");
         }
         else{
@@ -79,12 +79,11 @@ public class EventService {
             }
         }
         
-        
     }
 
     public ModelAndView update(@PathVariable Long id, @Valid DtoEvent dto, BindingResult result){
         if (result.hasErrors()) {
-            System.out.println("********************UPDAAATEEEE  ERROOOOOOR!!!************************");
+            System.out.println("*******UPDAAATEEEE  ERROOOOOOR!!!*******");
             return new ModelAndView("events/Edit");
         }
         else{ 
@@ -95,7 +94,7 @@ public class EventService {
                 return new ModelAndView("redirect:/"+ eve.getId()+ "/details");
             }
             else{
-                System.out.println("******************************** OPTIONALLLLLLLLL    NÃO ENCONTRADOO");
+                System.out.println("********OPTIONAL NÃO ENCONTRADOO********");
                 return new ModelAndView("redirect:/list");
             }
         }

@@ -1,6 +1,7 @@
 body{
     height: 100vh;
     background: linear-gradient(120deg,	#000000,	#020286);
+    background-attachment: fixed;
     justify-content: center;
     font-family: 'Bebas Neue', sans-serif;
     color: white;

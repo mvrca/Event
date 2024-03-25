@@ -27,3 +27,8 @@ body{
 .nav-link{
     color: white;
 }
+
+.campo{
+    width:300px;
+    text-align: center;
+}

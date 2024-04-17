@@ -33,6 +33,16 @@ public class GuestController {
         return gService.showGuestList(id);
     }
 
+    @GetMapping("/{phone}/edit")
+    public ModelAndView editGuest(@PathVariable String phone, DtoGuest dto, BindingResult result){
+        return gService.editGuest(phone, dto, result);
+    }
+
+    @PostMapping("/{phone}/edit")
+    public ModelAndView updateGuest(@PathVariable String phone, @Valid DtoGuest dto, BindingResult result){
+        return gService.updateGuest(phone, dto, result);
+    }
+
     @GetMapping("/{id}/delAll")
     public String deleteAllGuests(@PathVariable Long id){
         return gService.deleteAllGuests(id);

@@ -9,6 +9,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.fasterxml.jackson.annotation.JsonCreator.Mode;
+
 import app.event.Models.Event;
 import app.event.Models.Guest;
 import app.event.Repositories.EventRepository;
@@ -79,7 +81,32 @@ public class GuestService {
         String id = "" + code;
 
         return "redirect:/" + id + "/guestList";
-
-        
     }
+
+    public ModelAndView editGuest(@PathVariable String phone, DtoGuest dto, BindingResult result){
+        if(result.hasErrors()){
+            System.out.println("*****Guest Edit Error****");
+            return new ModelAndView("events/GuestEdit");
+        }
+        else{
+            Guest guest = gRepository.findByPhone(phone);
+            dto.fromGuest(guest);
+            ModelAndView mv = new ModelAndView("events/GuestEdit");
+            return mv;
+        }
+        }
+    
+    public ModelAndView updateGuest(@PathVariable String phone, @Valid DtoGuest dto, BindingResult result){
+    if(result.hasErrors()){
+        System.out.println("*****Guest Update Error*****");
+        return new ModelAndView("events/GuestEdit");
+    }else{
+        Guest guest = gRepository.findByPhone(phone);
+        Guest g = dto.toGuest(guest);
+        gRepository.save(g);
+        ModelAndView mv = new ModelAndView("redirect:/list");
+        return mv;
+    }
+    }  
 }
+

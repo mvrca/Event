@@ -7,13 +7,10 @@ import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Guest {
-
     @ManyToOne
     private Event event;
-
     @Id
     private String phone;
-    
     private String name;
     
     

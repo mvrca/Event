@@ -60,6 +60,7 @@ public class EventService {
     }
 
     public ModelAndView edit(@PathVariable Long id, DtoEvent dto, BindingResult result){
+        
         if (result.hasErrors()) {
             System.out.println("**********EDIIIIITTTT ERROOORRR!!!**********");
             return new ModelAndView("events/Edit");

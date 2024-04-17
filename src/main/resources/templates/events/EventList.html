@@ -8,11 +8,11 @@
         <h1>Event List</h1>
         <h5>(All Events, here!)</h5>
     </div>
-    <table class="container table table-hover mt-4">
+    <table class="container table table-hover mt-4 table1">
         <thead>
             <tr>
                <td>EVENT NAME:</td> 
-               <td>UPDATE:</td>
+               <td>EDIT:</td>
                <td>DELETE:</td>
                <td>ID:</td> 
             </tr>
@@ -22,8 +22,8 @@
         <tbody>
             <tr th:each="ev: ${events}">
                 <td><a class="btn btn-primary campo" th:href="@{'/'+ ${ev.id} + '/details'}"><span th:text="${ev.name}"></span></a></td>
-                <td><a class="btn btn-primary" th:href="@{'/'+ ${ev.id}}"><i class="bi bi-pen"></i> edit</a></td>
-                <td><a class="btn btn-primary" th:href="@{'/'+ ${ev.id}+ '/delete'}"><i class="bi bi-trash2-fill"></i>delete</a></td>
+                <td><a class="btn btn-primary" th:href="@{'/'+ ${ev.id}}"><i class="bi bi-pen"></i></a></td>
+                <td><a class="btn btn-primary" th:href="@{'/'+ ${ev.id}+ '/delete'}"><i class="bi bi-trash2-fill"></i></a></td>
                 <td><span th:text="'#'+ ${ev.id}"></span></td>
             </tr>
         </tbody>

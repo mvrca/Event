@@ -20,7 +20,15 @@ public class DtoGuest {
         guest.setPhone(phone);
         return guest;
     }
-
+    public void fromGuest(Guest g){
+        this.name = g.getName();
+        this.phone = g.getPhone();
+    }
+    public Guest toGuest( Guest g){
+        g.setName(name);
+        g.setPhone(phone);
+        return g;
+    }
     //#region Getters&Setters
     public String getName() {
         return name;
@@ -34,6 +42,7 @@ public class DtoGuest {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+    
     //#endregion
 
     

@@ -9,8 +9,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.fasterxml.jackson.annotation.JsonCreator.Mode;
-
 import app.event.Models.Event;
 import app.event.Models.Guest;
 import app.event.Repositories.EventRepository;
@@ -72,37 +70,35 @@ public class GuestService {
         }
     }
 
-    public String del(@PathVariable String phone){
-        Guest guest = gRepository.findByPhone(phone);
-        gRepository.deleteById(phone);;
-
-        Event ev = guest.getEvent();
+    public String del(@PathVariable Long id){
+        Optional<Guest> guest = gRepository.findById(id);
+        gRepository.deleteById(id);
+        Guest g = guest.get();
+        Event ev = g.getEvent();
         Long code = ev.getId();
-        String id = "" + code;
-
-        return "redirect:/" + id + "/guestList";
+        return "redirect:/" + code + "/guestList";
     }
 
-    public ModelAndView editGuest(@PathVariable String phone, DtoGuest dto, BindingResult result){
+    public ModelAndView editGuest(@PathVariable Long id, DtoGuest dto, BindingResult result){
         if(result.hasErrors()){
             System.out.println("*****Guest Edit Error****");
             return new ModelAndView("events/GuestEdit");
         }
         else{
-            Guest guest = gRepository.findByPhone(phone);
-            dto.fromGuest(guest);
+            Optional<Guest> guest = gRepository.findById(id);
+            dto.fromGuest(guest.get());
             ModelAndView mv = new ModelAndView("events/GuestEdit");
             return mv;
         }
         }
     
-    public ModelAndView updateGuest(@PathVariable String phone, @Valid DtoGuest dto, BindingResult result){
+    public ModelAndView updateGuest(@PathVariable Long id, @Valid DtoGuest dto, BindingResult result){
     if(result.hasErrors()){
         System.out.println("*****Guest Update Error*****");
         return new ModelAndView("events/GuestEdit");
     }else{
-        Guest guest = gRepository.findByPhone(phone);
-        Guest g = dto.toGuest(guest);
+        Optional<Guest> guest = gRepository.findById(id);
+        Guest g = dto.toGuest(guest.get());
         gRepository.save(g);
         ModelAndView mv = new ModelAndView("redirect:/list");
         return mv;

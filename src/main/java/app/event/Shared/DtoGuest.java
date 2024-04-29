@@ -1,7 +1,6 @@
 package app.event.Shared;
 
 import app.event.Models.Guest;
-import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
@@ -9,7 +8,6 @@ public class DtoGuest {
     @NotBlank
     @NotNull
     private String name;
-    @Id
     @NotBlank
     @NotNull
     private String phone;

@@ -2,6 +2,8 @@ package app.event.Models;
 
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 
@@ -10,6 +12,8 @@ public class Guest {
     @ManyToOne
     private Event event;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String phone;
     private String name;
     
@@ -36,6 +40,12 @@ public class Guest {
     public void setEvent(Event event) {
         this.event = event;
     }
+    public Long getId() {
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }    
      //#endregion
 
     

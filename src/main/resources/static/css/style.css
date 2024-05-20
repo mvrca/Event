@@ -21,10 +21,10 @@ body{
     border-color: #ffffff; 
 }
 
-.table1{
+#table1{
     background-color: transparent !important;
 }
-.table1 td{
+#table1 td{
     background-color: transparent !important;
     color: white;
 }

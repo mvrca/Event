@@ -7,12 +7,30 @@
 
         <style>
             body{
-                background-image: url("images/Events.jpg");
+                background-image: url("images/1.png");
                 background-size:cover;
                 background-repeat: repeat;
+                background-position: center center;
+                position: relative;
+            }
+
+            .custom-button {
+                position: absolute; /* Posicionamento absoluto para o botão */
+                top: 72.3%; /* Ajuste conforme necessário */
+                left: 23%; /* Ajuste conforme necessário */
+                transform: translate(-50%, -50%); /* Para centralizar o botão */
+                background-color: transparent; /* Cor de fundo transparente */
+                border: 2px solid rgba(255, 255, 255, 0); /* Borda branca, você pode ajustar conforme necessário */
+                color: rgba(255, 255, 255, 0); /* Cor do texto do botão */
+                padding: 10px 20px; /* Espaçamento interno */
+                font-size: 16px; /* Tamanho da fonte */
+                cursor: pointer; /* Cursor ao passar o mouse sobre o botão */
             }
         </style>
-
+        
+        <a href="/form">
+            <button  class="custom-button">Meu Botão</button>
+        </a>
     </body>
 </html>
 

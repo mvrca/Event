@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head th:replace="~{Fragments::head(Guests)}"></head>
+    <head th:replace="~{Fragments::head(Guests)}">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/static/script.js"></script>
+    </head>
 <body>
 
     <header th:replace="~{Fragments::header}"></header>
 
-    <div class="container text-center mt-4">
+    <div class="container text-center mt-4" id="guestlistid">
         <h1>Guest List</h1>
         <h5>(List with all guests in this Event.)</h5>
     </div>
 
-        <table class="container table table-hover mt-4 table1">
+        <table class="container table table-hover mt-4" id="table1">
         <thead>
             <tr>
                <td>GUEST NAME:</td> 
@@ -30,17 +33,28 @@
         </tbody>
     </table>
     <div class="container mt-4">
-        <h4 class="font-weight-bold">Add New Guest:</h4>
+        <h4 class="font-weight-bold"></h4>
       </div>
     <div class="container mb-3">
         <a th:href="@{'/' + ${id} + '/guest'}" class="btn btn-primary">+Add</a>
     </div>
-    <div class="container mt-4">
-        <h4 class="font-weight-bold">Delete All Guests:</h4>
+    <div class="container mb-3">
+        <h4 class="font-weight-bold"></h4>
       </div>
     <div class="container mb-3">
-        <a th:href="@{'/' + ${id} + '/delAll'}" class="btn btn-primary"><i class="bi bi-trash2-fill"></i>delete</a>
+        <a th:href="@{'/' + ${id} + '/delAll'}" class="btn btn-primary"><i class="bi bi-trash2-fill"></i></a>
     </div>
+    
+    <div class="container mb-3">
+        <button id="btn" class="btn btn-primary">Download</button>
+    </div>
+    <br>
+    
+    <br>
+    <br>
+    <br>
+    <br>
     
 </body>
 </html>
+

@@ -1,4 +1,4 @@
-FROM maven:3.8.4-jdk-11 AS build
+FROM maven:3.8.4-jdk-17 AS build
 
 COPY src /app/src
 
@@ -8,7 +8,7 @@ WORKDIR /app
 
 RUN mvn clean install
 
-FROM openjdk:8-jre-alpine
+FROM openjdk:17-jre-alpine
 
 COPY --from=build /app/target/event-1.0.jar /app/ev.jar
 

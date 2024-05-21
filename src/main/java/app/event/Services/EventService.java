@@ -43,7 +43,7 @@ public class EventService {
 
     public ModelAndView showList(){
         Sort sort = Sort.by(Sort.Direction.ASC, "date");
-        Pageable pageable = PageRequest.of(0, 10, sort);
+        Pageable pageable = PageRequest.of(0, 20, sort);
         
         Page<Event> ev = evRepository.findAll(pageable);
 

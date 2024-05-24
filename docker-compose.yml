@@ -1,0 +1,21 @@
+version: '2.4'
+services:
+    web:
+      build: .
+      ports: 
+          - 8080:8080
+      environment:
+        - HOST=db
+      depends_on:
+          - db
+    db:
+        container_name: event_db
+        image: postgres:latest
+        volumes:
+            - /tmp/eventos:/var/lib/postgresql/data
+        environment:
+            - POSTGRES_PASSWORD=0102
+            - POSTGRES_USER=postgres
+            - POSTGRES_DB=eventos
+        ports:
+            - 5432:5432

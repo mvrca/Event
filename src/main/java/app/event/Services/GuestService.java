@@ -36,7 +36,7 @@ public class GuestService {
         if(result.hasErrors()){
             Optional<Event> event = evRepository.findById(id);
             System.out.println("*******************Guest Service ERRorrrr*****");
-            ModelAndView mv = new ModelAndView("/events/GuestForm");
+            ModelAndView mv = new ModelAndView("events/GuestForm");
             mv.addObject("event", event.get());
             return mv;
         }
@@ -53,7 +53,7 @@ public class GuestService {
     public ModelAndView showGuestList(@PathVariable long id){
         Optional<Event> event = evRepository.findById(id);
         List<Guest> g = gRepository.findByEvent(event.get());
-        ModelAndView mv = new ModelAndView("/events/GuestList");
+        ModelAndView mv = new ModelAndView("events/GuestList");
         Event ev = event.get();
         mv.addObject("id", ev.getId());
         mv.addObject("guest", g);
